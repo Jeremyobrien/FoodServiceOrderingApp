@@ -32,5 +32,10 @@ namespace FoodServiceOrderingApp.Models
         {
             return _foodServiceOrderingAppDbContext.Pies.FirstOrDefault(p => p.PieId == pieId);
         }
+
+        public IEnumerable<Pie> SearchPies(string searchQuery)
+        {
+            return _foodServiceOrderingAppDbContext.Pies.Where( p => p.Name.Contains(searchQuery));
+        }
     }
 }
