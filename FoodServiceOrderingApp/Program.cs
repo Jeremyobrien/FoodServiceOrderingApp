@@ -1,8 +1,12 @@
 using FoodServiceOrderingApp.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString
+    ("FoodServiceOrderingAppDbContextConnection") ?? throw new InvalidOperationException("Connection" +
+    " string 'FoodServiceOrderingAppDbContextConnection' not found.");
 
 builder.Services.AddScoped<ICategoryRepository,CategoryRepository>();
 builder.Services.AddScoped<IPieRepository, PieRepository>();
@@ -25,12 +29,16 @@ builder.Services.AddDbContext<FoodServiceOrderingAppDbContext>(options =>
         builder.Configuration["ConnectionStrings:FoodServiceOrderingAppDbContextConnection"]);
 });
 
+builder.Services.AddDefaultIdentity<IdentityUser>()
+    .AddEntityFrameworkStores<FoodServiceOrderingAppDbContext>();
+
 builder.Services.AddServerSideBlazor();
 
 var app = builder.Build();
 
 app.UseStaticFiles();
 app.UseSession();
+app.UseAuthentication();
 
 if(app.Environment.IsDevelopment())
 {
