@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodServiceOrderingApp", "FoodServiceOrderingApp\FoodServiceOrderingApp.csproj", "{DFBC78FE-7F1B-406E-A652-A1114B736D3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodServiceOrderingAppTests", "FoodServiceOrderingAppTests\FoodServiceOrderingAppTests.csproj", "{2524CEB0-306C-4EF9-B0E7-56DA3D24F9C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodServiceOrderingAppTests", "FoodServiceOrderingAppTests\FoodServiceOrderingAppTests.csproj", "{2524CEB0-306C-4EF9-B0E7-56DA3D24F9C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

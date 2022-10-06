@@ -5,6 +5,13 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Pages\05\**" />
+    <Content Remove="Pages\05\**" />
+    <EmbeddedResource Remove="Pages\05\**" />
+    <None Remove="Pages\05\**" />
+  </ItemGroup>
 	
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.9" />
@@ -23,6 +30,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<None Include="Pages\App\AppLayout.razor" />
+		<None Include="Pages\App\AppRouter.razor" />
+		<None Include="Pages\App\Index.cshtml" />
+		<None Include="Pages\App\PieCard.razor" />
+		<None Include="Pages\App\SearchBlazor.razor" />
+		<None Include="Pages\App\_Imports.razor" />
 		<None Include="Views\Shared\_PieCard.cshtml" />
 	</ItemGroup>
 
